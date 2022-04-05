@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        changeFragment(new TemperatureFragment());
 
         Toolbar toolbar = findViewById(R.id.toolbar_id);
         setSupportActionBar(toolbar);
@@ -35,11 +36,11 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.alert_item:
-                
+                changeFragment(new AlertFragment());
                 break;
 
             case R.id.temperature_item:
-                Toast.makeText(this, "Temperature", Toast.LENGTH_SHORT).show();
+                changeFragment(new TemperatureFragment());
                 break;
         }
 
