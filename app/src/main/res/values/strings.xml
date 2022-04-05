@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Temperature Montoring Apps</string>
+    <string name="temperature">Temperature</string>
+    <string name="alert">Alert</string>
 </resources>
