@@ -4,12 +4,191 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AlertFragment"
-    android:background="@color/teal_700">
+    android:background="@color/white">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Alert Fragment" />
+        android:orientation="vertical"
+        android:layout_marginTop="60dp"
+        android:layout_marginHorizontal="36dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="High Temperature Alert"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="24sp"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <LinearLayout
+                    android:id="@+id/showTempMax"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="40sp"
+                        android:textColor="@color/black"
+                        android:layout_marginRight="8dp"
+                        android:text="@string/gte"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tempMax"
+                        android:textColor="@color/black"
+                        android:text="32"
+                        android:layout_marginRight="8dp"
+                        android:textSize="40sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="2dp"
+                        android:textColor="@color/grey"
+                        android:textSize="30sp"
+                        android:text="@string/degree"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/editTempMax"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:layout_width="75dp"
+                        android:layout_height="53dp"
+                        android:id="@+id/addTempMax"
+                        android:layout_marginRight="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="2dp"
+                        android:textColor="@color/grey"
+                        android:textSize="30sp"
+                        android:text="@string/degree"/>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Low Temperature Alert"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:layout_marginTop="36dp"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <LinearLayout
+                    android:id="@+id/showTempMin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="40sp"
+                        android:textColor="@color/black"
+                        android:layout_marginRight="8dp"
+                        android:text="@string/lte"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tempMin"
+                        android:textColor="@color/black"
+                        android:text="12"
+                        android:layout_marginRight="8dp"
+                        android:textSize="40sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="2dp"
+                        android:textColor="@color/grey"
+                        android:textSize="30sp"
+                        android:text="@string/degree"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/editTempMin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:layout_width="75dp"
+                        android:layout_height="53dp"
+                        android:id="@+id/addTempMin"
+                        android:layout_marginRight="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="2dp"
+                        android:textColor="@color/grey"
+                        android:textSize="30sp"
+                        android:text="@string/degree"/>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom|right"
+            android:layout_marginBottom="40dp">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/btnEditTemp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Edit"/>
+
+                <Button
+                    android:id="@+id/btnSaveTemp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Save"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
 
 </FrameLayout>

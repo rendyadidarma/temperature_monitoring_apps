@@ -2,6 +2,9 @@
     <string name="app_name">Temperature Montoring Apps</string>
     <string name="temperature">Temperature</string>
     <string name="alert">Alert</string>
+    <string name="degree">\u2103</string>
+    <string name="gte">\u2265</string>
+    <string name="lte">\u2264</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
