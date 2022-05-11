@@ -30,7 +30,7 @@
                 android:id="@+id/curTemp"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="28"
+                android:text="0.0"
                 android:textSize="100sp"
                 android:textColor="@color/black"/>
 
@@ -42,8 +42,28 @@
                 android:textSize="50sp"
                 android:textColor="@color/grey"/>
 
+
+
+
         </LinearLayout>
 
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/highDetect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="High Temperature Detected"
+            android:textSize="20sp"
+            android:textColor="@color/purple_200"/>
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/lowDetect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Low Temperature Detected"
+            android:textSize="20sp"
+            android:textColor="@color/purple_200"/>
 
 
     </LinearLayout>

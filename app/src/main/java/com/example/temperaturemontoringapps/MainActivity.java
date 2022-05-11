@@ -13,7 +13,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,22 +25,22 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        changeFragment(new TemperatureFragment());
-
         Toolbar toolbar = findViewById(R.id.toolbar_id);
         setSupportActionBar(toolbar);
 
-        sharedPreferences = getSharedPreferences("DATA_PREF", MODE_PRIVATE);
-        int currentTemp, lowestTemp, highestTemp;
-        currentTemp = sharedPreferences.getInt("curr", -1);
-        lowestTemp = sharedPreferences.getInt("low", -1);
-        highestTemp = sharedPreferences.getInt("high", -1);
+        changeFragment(new TemperatureFragment());
 
-        temperature.setCURRENT_TEMP(currentTemp);
-        temperature.setHIGHEST_TEMP(highestTemp);
-        temperature.setLOWEST_TEMP(lowestTemp);
+        sharedPreferences = getSharedPreferences("com.example.TemperatureApp.RANGETEMP", MODE_PRIVATE);
+        double lowestTemp, highestTemp;
+        lowestTemp = sharedPreferences.getFloat("low", -1);
+        highestTemp = sharedPreferences.getFloat("high", -1);
 
-        Log.wtf("curr", String.valueOf(temperature.getCURRENT_TEMP()));
+
+
+        temperature.setHIGHEST_TEMP(this, highestTemp);
+        temperature.setLOWEST_TEMP(this, lowestTemp);
+
+//        Log.wtf("curr", String.valueOf(temperature.getCURRENT_TEMP()));
         Log.wtf("high", String.valueOf(temperature.getHIGHEST_TEMP()));
         Log.wtf("low", String.valueOf(temperature.getLOWEST_TEMP()));
 

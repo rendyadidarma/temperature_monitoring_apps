@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "832939489317",
+    "firebase_url": "https://iotemp-6553a-default-rtdb.firebaseio.com",
+    "project_id": "iotemp-6553a",
+    "storage_bucket": "iotemp-6553a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:832939489317:android:b56b89d33a43baa67ea7cc",
+        "android_client_info": {
+          "package_name": "com.example.temperaturemontoringapps"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "832939489317-n4fum3n7cnlodcm3tu3bp00hqhrjrbd7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4PNbnpvNBH-ooDNgnFsMYTcuWB1b1qSQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "832939489317-n4fum3n7cnlodcm3tu3bp00hqhrjrbd7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -2,7 +2,6 @@ package com.example.temperaturemontoringapps;
 
 import static com.example.temperaturemontoringapps.MainActivity.temperature;
 
-import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -58,9 +57,10 @@ public class AlertFragment extends Fragment implements View.OnClickListener {
     }
 
     private void init() {
-
-        showTempMax.setText(Integer.toString(temperature.getHIGHEST_TEMP()));
-        showTempMin.setText(Integer.toString(temperature.getLOWEST_TEMP()));
+        if(temperature != null) {
+            showTempMax.setText(String.format("%s", temperature.getHIGHEST_TEMP()));
+            showTempMin.setText(String.format("%s", temperature.getLOWEST_TEMP()));
+        }
     }
 
     @Override
@@ -92,9 +92,10 @@ public class AlertFragment extends Fragment implements View.OnClickListener {
                 btnEditTemp.setVisibility(View.VISIBLE);
                 linearEditMin.setVisibility(View.GONE);
                 linearEditMax.setVisibility(View.GONE);
+
                 if(!etTempMax.getText().toString().equalsIgnoreCase("") && !etTempMin.getText().toString().equalsIgnoreCase("")) {
-                    temperature.setHIGHEST_TEMP(Integer.parseInt(etTempMax.getText().toString()));
-                    temperature.setLOWEST_TEMP(Integer.parseInt(etTempMin.getText().toString()));
+                    temperature.setHIGHEST_TEMP(getActivity(), Double.parseDouble(etTempMax.getText().toString()));
+                    temperature.setLOWEST_TEMP(getActivity(), Double.parseDouble(etTempMin.getText().toString()));
                     init();
                 } else {
                     Toast.makeText(getActivity(), "High and Low Temperature Cannot be Empty", Toast.LENGTH_SHORT).show();
