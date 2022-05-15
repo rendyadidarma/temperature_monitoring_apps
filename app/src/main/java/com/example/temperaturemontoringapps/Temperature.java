@@ -26,7 +26,6 @@ public class Temperature {
 
     public void setHIGHEST_TEMP(Context context, double HIGHEST_TEMP) {
         this.HIGHEST_TEMP = HIGHEST_TEMP;
-
         SharedPreferences sharedPref = context.getSharedPreferences("com.example.TemperatureApp.RANGETEMP", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putFloat("high", (float) HIGHEST_TEMP);

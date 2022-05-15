@@ -35,8 +35,6 @@ public class MainActivity extends AppCompatActivity {
         lowestTemp = sharedPreferences.getFloat("low", -1);
         highestTemp = sharedPreferences.getFloat("high", -1);
 
-
-
         temperature.setHIGHEST_TEMP(this, highestTemp);
         temperature.setLOWEST_TEMP(this, lowestTemp);
 

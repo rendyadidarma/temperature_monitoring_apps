@@ -56,9 +56,9 @@ public class TemperatureFragment extends Fragment {
                 if(value != null) {
                     binding.curTemp.setText("" + value);
 
-                    if(value <= temperature.getLOWEST_TEMP()) {
+                    if (value <= temperature.getLOWEST_TEMP()) {
                         binding.lowDetect.setVisibility(View.VISIBLE);
-                    } else if(value >= temperature.getHIGHEST_TEMP()) {
+                    } else if (value >= temperature.getHIGHEST_TEMP()) {
                         binding.highDetect.setVisibility(View.VISIBLE);
                     } else {
                         binding.highDetect.setVisibility(View.GONE);

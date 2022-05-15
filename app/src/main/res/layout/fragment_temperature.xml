@@ -15,35 +15,95 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Current Temperature"
+            android:text="Current Condition"
             android:textStyle="bold"
-            android:textSize="20sp"/>
+            android:textSize="36sp"
+            android:layout_marginBottom="32dp"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:gravity="top"
+            android:layout_marginHorizontal="16dp"
             android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/curTemp"
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="0.0"
-                android:textSize="100sp"
-                android:textColor="@color/black"/>
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginRight="32dp"
+                android:orientation="vertical">
 
-            <TextView
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Temperature"
+                    android:textStyle="bold"
+                    android:textSize="20sp"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="top"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/curTemp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="0.0"
+                        android:textSize="80sp"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="@string/degree"
+                        android:layout_marginTop="15sp"
+                        android:textSize="40sp"
+                        android:textColor="@color/grey"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="@string/degree"
-                android:layout_marginTop="15sp"
-                android:textSize="50sp"
-                android:textColor="@color/grey"/>
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Humidity"
+                    android:textStyle="bold"
+                    android:textSize="20sp"/>
 
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="top"
+                    android:orientation="horizontal">
 
+                    <TextView
+                        android:id="@+id/curHumid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="0.0"
+                        android:textSize="80sp"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="%"
+                        android:layout_marginTop="15sp"
+                        android:textSize="40sp"
+                        android:textColor="@color/grey"/>
+                </LinearLayout>
+
+            </LinearLayout>
 
         </LinearLayout>
 
@@ -52,8 +112,9 @@
             android:id="@+id/highDetect"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:text="High Temperature Detected"
-            android:textSize="20sp"
+            android:textSize="16sp"
             android:textColor="@color/purple_200"/>
 
         <TextView
@@ -62,8 +123,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Low Temperature Detected"
-            android:textSize="20sp"
+            android:textSize="16sp"
             android:textColor="@color/purple_200"/>
+
 
 
     </LinearLayout>
