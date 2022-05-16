@@ -2,6 +2,7 @@ package com.example.temperaturemontoringapps;
 
 import static com.example.temperaturemontoringapps.MainActivity.temperature;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -12,6 +13,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.temperaturemontoringapps.databinding.FragmentTemperatureBinding;
 import com.google.firebase.database.DataSnapshot;
@@ -39,44 +41,66 @@ public class TemperatureFragment extends Fragment {
 
     @Override
     public void onDestroyView() {
-        binding = null;
         super.onDestroyView();
+//        binding = null;
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
+        created();
+    }
+
+    public void created() {
         FirebaseDatabase database = FirebaseDatabase.getInstance("https://iotemp-6553a-default-rtdb.firebaseio.com/");
-        DatabaseReference temperatureData = database.getReference("Result").child("Temperature");
+        DatabaseReference temperatureData = database.getReference("Result");
+
 
         temperatureData.addValueEventListener(new ValueEventListener() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                Double value = snapshot.getValue(Double.class);
-                if(value != null) {
-                    binding.curTemp.setText("" + value);
 
-                    if (value <= temperature.getLOWEST_TEMP()) {
+                Double valueTemp = null, valueHum = null;
+
+                if (snapshot.hasChildren() && snapshot.exists()) {
+                    valueTemp = snapshot.child("Temperature").getValue(Double.class);
+                    Log.wtf("value", "The temperature now is " + valueTemp);
+
+
+                    if (valueTemp <= temperature.getLOWEST_TEMP()) {
                         binding.lowDetect.setVisibility(View.VISIBLE);
-                    } else if (value >= temperature.getHIGHEST_TEMP()) {
+                    } else if (valueTemp >= temperature.getHIGHEST_TEMP()) {
                         binding.highDetect.setVisibility(View.VISIBLE);
                     } else {
                         binding.highDetect.setVisibility(View.GONE);
                         binding.lowDetect.setVisibility(View.GONE);
                     }
+
+                    valueHum = snapshot.child("Humidity").getValue(Double.class);
+
+                    Log.wtf("value", "The temperature now is " + valueHum);
+                } else {
+                    Log.wtf("No Data Error", "Error No Data Found!");
                 }
 
-                Log.wtf("value", "The temperature now is " + value);
+                TextView temp = binding.curTemp;
+                TextView humidity = binding.curHumid;
+                if(valueTemp != null) {
+                    temp.setText(valueTemp.toString());
+                }
+
+                if(valueHum != null) {
+                    humidity.setText(valueHum.toString());
+                }
+
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
                 Log.w("Error", "Failed to read value.");
-
             }
         });
-
-        super.onViewCreated(view, savedInstanceState);
     }
 }

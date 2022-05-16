@@ -15,6 +15,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/black"
             android:text="Current Condition"
             android:textStyle="bold"
             android:textSize="36sp"
@@ -37,6 +38,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Temperature"
+                    android:textColor="@color/black"
                     android:textStyle="bold"
                     android:textSize="20sp"/>
 
@@ -52,7 +54,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:text="0.0"
-                        android:textSize="80sp"
+                        android:textSize="72sp"
                         android:textColor="@color/black"/>
 
                     <TextView
@@ -76,6 +78,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Humidity"
+                    android:textColor="@color/black"
                     android:textStyle="bold"
                     android:textSize="20sp"/>
 
@@ -91,7 +94,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:text="0.0"
-                        android:textSize="80sp"
+                        android:textSize="72sp"
                         android:textColor="@color/black"/>
 
                     <TextView
@@ -113,18 +116,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="High Temperature Detected"
+            android:text="High Temperature Detected!"
             android:textSize="16sp"
-            android:textColor="@color/purple_200"/>
+            android:textAllCaps="true"
+            android:textColor="@color/dark_red"/>
 
         <TextView
             android:visibility="gone"
             android:id="@+id/lowDetect"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Low Temperature Detected"
+            android:text="Low Temperature Detected!"
             android:textSize="16sp"
-            android:textColor="@color/purple_200"/>
+            android:textAllCaps="true"
+            android:textColor="@color/cold_blue"/>
 
 
 

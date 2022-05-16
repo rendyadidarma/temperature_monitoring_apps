@@ -75,6 +75,7 @@
                         android:layout_width="75dp"
                         android:layout_height="53dp"
                         android:id="@+id/addTempMax"
+                        android:textColor="@color/black"
                         android:visibility="gone"
                         android:textSize="32sp"
                         android:layout_marginRight="8dp"
@@ -150,6 +151,7 @@
                         android:layout_width="75dp"
                         android:layout_height="53dp"
                         android:visibility="gone"
+                        android:textColor="@color/black"
                         android:id="@+id/addTempMin"
                         android:layout_marginRight="8dp"
                         android:textSize="32sp"/>
@@ -182,6 +184,7 @@
                     android:id="@+id/btnEditTemp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/white"
                     android:text="Edit"/>
 
                 <Button
@@ -189,6 +192,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:visibility="gone"
+                    android:textColor="@color/white"
                     android:text="Save"/>
 
             </RelativeLayout>

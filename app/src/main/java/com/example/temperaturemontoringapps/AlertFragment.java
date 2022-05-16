@@ -102,6 +102,8 @@ public class AlertFragment extends Fragment implements View.OnClickListener {
                 }
 
                 break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + v.getId());
         }
     }
 }
