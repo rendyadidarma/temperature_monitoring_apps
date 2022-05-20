@@ -26,10 +26,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class TemperatureFragment extends Fragment {
+public class TemperatureFragment extends Fragment implements View.OnClickListener {
 
     private FragmentTemperatureBinding binding;
-
+    private int flag = -1;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +40,8 @@ public class TemperatureFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding = FragmentTemperatureBinding.inflate(inflater, container, false);
+        binding.fixTemp.setClickable(true);
+        binding.fixTemp.setOnClickListener(this);
         return binding.getRoot();
     }
 
@@ -77,15 +79,18 @@ public class TemperatureFragment extends Fragment {
                         binding.lowDetect.setVisibility(View.VISIBLE);
                         binding.warnLow.setVisibility(View.VISIBLE);
                         binding.fixTemp.setVisibility(View.VISIBLE);
+                        flag = 0;
 
                     } else if (valueTemp >= temperature.getHIGHEST_TEMP()) {
                         binding.highDetect.setVisibility(View.VISIBLE);
                         binding.warnHigh.setVisibility(View.VISIBLE);
                         binding.fixTemp.setVisibility(View.VISIBLE);
-
+                        flag = 1;
                     } else {
                         binding.highDetect.setVisibility(View.GONE);
                         binding.lowDetect.setVisibility(View.GONE);
+                        binding.fixTemp.setVisibility(View.GONE);
+                        flag = -1;
                     }
 
                     valueHum = snapshot.child("Humidity").getValue(Double.class);
@@ -112,5 +117,25 @@ public class TemperatureFragment extends Fragment {
                 Log.w("Error", "Failed to read value.");
             }
         });
+    }
+
+    @Override
+    public void onClick(View v) {
+        if(v.getId() == R.id.fixTemp) {
+            Bundle bundle = new Bundle();
+            bundle.putInt("flag", flag);
+
+            //
+            Fragment fragment = new FixTempFragment();
+            FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+            FragmentTransaction transaction = fragmentManager.beginTransaction();
+            fragment.setArguments(bundle);
+
+            transaction.replace(R.id.frame_main, fragment);
+            transaction.addToBackStack(null);
+
+            transaction.commit();
+            Log.v("alr go to fixtemp frag", "succ");
+        }
     }
 }

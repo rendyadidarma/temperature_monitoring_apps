@@ -2,6 +2,10 @@
     <string name="app_name">Temperature Montoring Apps</string>
     <string name="temperature">Temperature</string>
     <string name="alert">Alert</string>
+    <string name="high_recommend_title">Recommendations to Fix High Room Temperature</string>
+    <string name="high_recommend_point">\u2022 Reduce the temperature of the air conditioner until optimal temperature. \n\n\u2022 Enlarge blower to lower heat in room. </string>
+    <string name="low_recommend_title">Recommendations to Fix Low Room Temperature</string>
+    <string name="low_recommend_point">\u2022 Increase the temperature of the air conditioner. \n\n\u2022 Turn off the air conditioner until the temperature returns to optimal. </string>
     <string name="degree">\u2103</string>
     <string name="gte">\u2265</string>
     <string name="lte">\u2264</string>
