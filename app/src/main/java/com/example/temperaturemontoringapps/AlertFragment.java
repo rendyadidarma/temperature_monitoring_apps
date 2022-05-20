@@ -97,6 +97,7 @@ public class AlertFragment extends Fragment implements View.OnClickListener {
                     temperature.setHIGHEST_TEMP(getActivity(), Double.parseDouble(etTempMax.getText().toString()));
                     temperature.setLOWEST_TEMP(getActivity(), Double.parseDouble(etTempMin.getText().toString()));
                     init();
+                    Toast.makeText(getActivity(), "Input succeed!", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(getActivity(), "High and Low Temperature Cannot be Empty", Toast.LENGTH_SHORT).show();
                 }
